@@ -14,7 +14,7 @@ public class CustomerService {
     public CustomerService(CustomerRepo customerRepo){
         this.customerRepo = customerRepo;
     }
-    List<Customer> getCustomer() {
+    List<Customer> getCustomers() {
         return customerRepo.getCustomers();
     }
 }
