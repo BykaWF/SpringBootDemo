@@ -29,4 +29,26 @@ public class ApiExceptionHandler {
                 apiException,
                 HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(value = NotFoundException.class)
+    public ResponseEntity<Object> handleApiRequestException(
+            // takes an exception that going to handle
+//            we want to take this exception
+            NotFoundException e // math with value
+    ){
+        //Build payload for our client
+        ApiException apiException = new ApiException(
+                e.getMessage(),
+                e,
+                HttpStatus.NOT_FOUND,
+                ZonedDateTime.now()
+        );
+
+        // Send the Response
+        return new ResponseEntity<>(
+                apiException,
+                HttpStatus.NOT_FOUND);
+    }
+
+
 }
