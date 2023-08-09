@@ -2,16 +2,11 @@ package com.yaroslavcode.customer;
 //DAO LAYER
 
 
-import java.util.Collections;
-import java.util.List;
-public class CustomerRepository implements CustomerRepo
-{
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-    @Override
-    public List<Customer> getCustomers() {
-//        TODO connect to real DB
-        return Collections.singletonList(
-                new Customer(1L, "TODO.Iml real db", "todo", "email@mail.com")
-        );
-    }
+@Repository
+public interface CustomerRepository
+        extends JpaRepository<Customer,Long> {
+
 }

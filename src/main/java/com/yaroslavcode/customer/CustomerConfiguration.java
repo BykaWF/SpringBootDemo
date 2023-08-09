@@ -9,17 +9,18 @@ import org.springframework.context.annotation.Configuration;
 public class CustomerConfiguration {
     @Value("${app.useFakeCustomerRepo: false}")
     private Boolean useFakeCustomerRepo;
+
     @Bean
-    CommandLineRunner commandLineRunner(){
+    CommandLineRunner commandLineRunner() {
         return args -> {
             System.out.println("Command line runner");
         };
     }
+
     @Bean
-    CustomerRepo customerRepo(){
+    CustomerRepo customerRepo() {
         System.out.println("useFakeCustomerRepo = " + useFakeCustomerRepo);
-        return useFakeCustomerRepo ?
-                new CustomerFakeRepo() :
-                new CustomerRepository();
+        return new CustomerFakeRepo();
+
     }
 }

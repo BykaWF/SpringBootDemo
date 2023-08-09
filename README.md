@@ -89,3 +89,5 @@ public class CustomerService {
 
 ```
 ![PostManAfter](images/PostManAfter.png)
+
+- if you want to reformat your code: option + command + L / Ctrl + Alt + L
