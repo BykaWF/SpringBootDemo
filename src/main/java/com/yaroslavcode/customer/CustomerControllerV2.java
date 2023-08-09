@@ -1,11 +1,11 @@
 package com.yaroslavcode.customer;
 //REST LAYER
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
-import java.util.Collections;
+
 import java.util.List;
 
 @RequestMapping(path = "api/v2/customers")
@@ -29,7 +29,7 @@ public class CustomerControllerV2 {
     }
 
     @PostMapping
-    void createNewCustomer(@Valid @RequestBody Customer customer){
+    void createNewCustomer(@RequestBody @Valid Customer customer){
         System.out.println("POST REQUEST...");
         System.out.println(customer);
     }
