@@ -91,3 +91,5 @@ public class CustomerService {
 ![PostManAfter](images/PostManAfter.png)
 
 - if you want to reformat your code: option + command + L / Ctrl + Alt + L
+- if you want to show info in your actuator 
+![Actuator](images/Acutator.png)

@@ -1,5 +1,7 @@
 package com.yaroslavcode.exception;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -9,6 +11,9 @@ import java.time.ZonedDateTime;
 // Will handle more than 1 exception
 @ControllerAdvice
 public class ApiExceptionHandler {
+
+    private final static Logger LOGGER =
+            LoggerFactory.getLogger(ApiExceptionHandler.class);
 //    They have to match
     @ExceptionHandler(value = ApiRequestException.class)
     public ResponseEntity<Object> handleApiRequestException(
